@@ -1,11 +1,12 @@
 import { AdminPanel } from "@/components/layout/admin-panel"
-import { OrderTable } from "@/components/reports/order-table"
+import { BanSection } from "./components/ban-section"
 
 const page = () => {
   return (
+  
     <>
     <AdminPanel>
-     <OrderTable />
+     <BanSection/>
     </AdminPanel>
     
     </>
