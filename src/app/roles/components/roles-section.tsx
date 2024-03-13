@@ -24,7 +24,7 @@ const RolesSection = () => {
     const email = SetEmail();
 
     useEffect(() => {
-        axios.get('http://localhost:3003/api/users/getAllUsers')
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/users/getAllUsers`)
             .then(response => {
                 if (Array.isArray(response.data.users)) {
                     setUsers(response.data.users);
@@ -57,7 +57,7 @@ const RolesSection = () => {
     };
 
     const updateUserRole = (userId: string, newRole: string, originalRole?: string) => {
-        axios.post('http://localhost:3003/api/admin/changeRole', {
+        axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/changeRole`, {
             userId: userId,
             newRole: newRole,
             email: email

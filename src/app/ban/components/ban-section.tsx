@@ -48,7 +48,7 @@ export function BanSection() {
             const formattedDate = data.dob.toISOString();
 
             // Enviar la solicitud al servidor
-            const response = await axios.post('http://localhost:3003/api/admin/temporalBan', {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/temporalBan`, {
                 adminEmail: adminEmail,
                 userEmail: data.email,
                 banDate: formattedDate,

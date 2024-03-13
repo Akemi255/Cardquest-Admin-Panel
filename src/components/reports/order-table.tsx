@@ -25,7 +25,7 @@ export function OrderTable() {
     useEffect(() => {    
         const fetchReports = async () => {
             try {
-                const response = await axios.get("http://localhost:3003/api/admin/getAllReports");
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/getAllReports`);
                 const data: Report[] = response.data;
                 setReports(data);
             } catch (error) {
@@ -38,7 +38,7 @@ export function OrderTable() {
 
     const handleDeleteReport = async (reportId: string) => {
         try {
-            await axios.delete("http://localhost:3003/api/admin/deleteReport", { 
+            await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/deleteReport`, { 
                 data: { 
                     reportId: reportId,
                     email: email 

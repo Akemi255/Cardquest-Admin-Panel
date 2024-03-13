@@ -13,12 +13,13 @@ const Chekauth = () => {
 
     useEffect(() => {
         let timeoutId: any;
-
+        console.log(process.env.NEXT_PUBLIC_API_URL);
+        
         if (email) {
             timeoutId = setTimeout(() => {
                 const fetchData = async () => {
                     try {
-                        const response = await axios.post('http://localhost:3003/api/admin/chekauth', { email });
+                        const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/admin/chekauth`, { email });
 
                         if (response.data.userRole === 'admin' || response.data.userRole === 'mod') {
                             return;
