@@ -1,4 +1,4 @@
-import Chekauth from "@/components/auth/chekauth";
+import Chekauth from "@/components/auth/checkauth";
 
 import React, { PropsWithChildren } from "react";
 import { Toaster } from "react-hot-toast";
