@@ -13,7 +13,6 @@ const Chekauth = () => {
 
     useEffect(() => {
         let timeoutId: any;
-        console.log(process.env.NEXT_PUBLIC_API_URL);
         
         if (email) {
             timeoutId = setTimeout(() => {
