@@ -24,7 +24,7 @@ const Chekauth = () => {
                             return;
                         } else {
                             signOut(() => router.push("/"))
-                            toast.error("No dispones los roles necesarios para acceder al panel");
+                            toast.error("No tienes los roles necesarios para acceder al panel");
                         }
                     } catch (error) {
                         toast.error('Error de red');
