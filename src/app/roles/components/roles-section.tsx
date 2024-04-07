@@ -24,7 +24,7 @@ const RolesSection = () => {
     const email = SetEmail();
 
     useEffect(() => {
-        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/users/getAllUsers`)
+        axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/users/getAllUsersForAdmins`)
             .then(response => {
                 if (Array.isArray(response.data.users)) {
                     setUsers(response.data.users);

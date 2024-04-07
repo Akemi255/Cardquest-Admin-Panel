@@ -13,7 +13,7 @@ const Chekauth = () => {
 
     useEffect(() => {
         let timeoutId: any;
-        
+
         if (email) {
             timeoutId = setTimeout(() => {
                 const fetchData = async () => {
@@ -23,7 +23,7 @@ const Chekauth = () => {
                         if (response.data.userRole === 'admin' || response.data.userRole === 'mod') {
                             return;
                         } else {
-                            signOut(() => router.push("/"))
+                            signOut(() => router.push("/sign-in"))
                             toast.error("No tienes los roles necesarios para acceder al panel");
                         }
                     } catch (error) {
